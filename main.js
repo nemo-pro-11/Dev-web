@@ -14,7 +14,7 @@ Add.addEventListener("click" , (eo) => {
   
   
           <div class="card myCard" style="width: 18rem;">
-          <img src="/img/amg_1.webp" class="card-img-top" alt="card">
+          <img src="img/amg_1.webp" class="card-img-top" alt="card">
           <div class="card-body">
             <h4 class="card-title">BMW F16</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
