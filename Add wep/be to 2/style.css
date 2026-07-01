@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, white, #352f5b);
+  color: #222;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 40px 0;
+}
+
+h2 {
+  margin: 50px 0 20px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TASK STYLE */
+.task {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.task:hover {
+  transform: scale(1.03);
+}
+
+.task p {
+  font-size: 20px;
+}
+
+/* icons under each other */
+.task div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.fa-solid {
+    font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fa-trash:hover {
+  color: red;
+}
+
+.fa-star:hover {
+  color: orange;
+}
+
+.fa-face-angry {
+  color: orange;
+}
+
+.fa-heart {
+  color: red;
+}
+
+/* completed task */
+.completed p {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* form */
+form {
+  margin-bottom: 50px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00ffcc;
+  color: black;
+}
+
+.star {
+  color: orange !important;
+}

@@ -1,0 +1,538 @@
+/* ================= GLOBAL STYLES ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* سرعة هافر استجابة فورية وخاطفة 0.15 ثانية لتجربة تفاعلية ممتازة */
+  transition: all 0.50s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a; /* خط داكن وصريح في الوايت مود */
+  min-height: 100vh;
+}
+
+/* ================= DARK MODE (العناصر بالكامل في الدارك) ================= */
+.dark {
+  background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
+  color: #f8fafc; /* خط فاتح وصريح في الدارك مود */
+}
+
+/* الهيدر في الدارك */
+.dark header {
+  background: linear-gradient(135deg, #05070c 0%, #0f172a 100%);
+  border-bottom: 3px solid #14b8a6;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 5px 15px rgba(20, 184, 166, 0.1);
+}
+
+/* العناوين في الدارك */
+.dark h1 {
+  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.4), 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* السكاشن في الدارك */
+.dark section {
+  background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 10px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dark section:hover {
+  box-shadow: 0 35px 65px rgba(0, 0, 0, 0.85), 0 15px 30px rgba(20, 184, 166, 0.2);
+}
+
+/* الكروت في الدارك */
+.dark .card {
+  background: linear-gradient(145deg, #1f2937 0%, #111827 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark .card:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+    box-shadow: 1px 15px 25px
+  rgb(4, 229, 236) !important;}
+
+.dark .card-title { color: #ffffff !important; }
+.dark .card-text { color: #cbd5e1 !important; }
+
+/* الديفات والصناديق المنبثقة (cont & follow) في الدارك */
+.dark .follow,
+.dark .cont {
+  background: linear-gradient(145deg, #111827 0%, #0f172a 100%);
+  color: #f3f4f6;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-top: 6px solid #06b6d4;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark .follow:hover,
+.dark .cont:hover {
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.95), 0 0 25px rgba(6, 182, 212, 0.2);
+}
+
+/* المدخلات (Input) في الدارك */
+.dark input[type="number"] {
+  background-color: #1f2937;
+  border: 2px solid #374151;
+  color: #ffffff;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.dark input[type="number"]:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* لينكات التنقل في الدارك */
+.dark .parent li a { color: #cbd5e1; }
+.dark .parent li a:hover {
+  color: #2dd4bf;
+  text-shadow: 0 0 8px rgba(45, 212, 191, 0.6);
+}
+.dark .parent li a::after {
+  background: linear-gradient(90deg, #14b8a6, #06b6d4);
+  box-shadow: 0 0 12px #06b6d4;
+}
+
+/* زر تغيير المود في الدارك */
+.dark .mode {
+  background: #090d16;
+  border: 2px solid #06b6d4;
+  color: #06b6d4;
+  box-shadow: 0 6px 15px rgba(6, 182, 212, 0.25);
+}
+.dark .mode:hover {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.8), 0 0 45px rgba(20, 184, 166, 0.4);
+  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+  color: #090d16;
+}
+
+.dark p, .dark h3, .dark h5, .dark li { color: #e5e7eb; }
+
+/* الفوتر في الدارك */
+.dark .design {
+  background: linear-gradient(135deg, #042f2e 0%, #0f172a 100%);
+  border-top: 2px solid #06b6d4;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.dark .follow a {
+  color: #06b6d4;
+  border-color: #06b6d4;
+}
+.dark .follow a:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+  color: #090d16;
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.6);
+}
+
+/* صورة معاذ الشخصية في الدارك */
+.dark .my-img {
+  border: 4px solid #06b6d4;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.6), 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark .bigCont {
+  background-color: rgba(5, 7, 12, 0.92);
+  backdrop-filter: blur(15px);
+}
+
+
+/* ================= LIGHT MODE (DEFAULT / الوايت مود) ================= */
+header {
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #076e62 0%, #0d9488 50%, #14b8a6 100%);
+  color: white;
+  border-radius: 0 0 45px 45px;
+  padding: 30px 0 40px;
+  /* شادو بكسل قوي وطبقات عميقة للهيدر */
+  box-shadow: 0 15px 35px rgba(13, 148, 136, 0.35), 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+  margin-bottom: 50px !important;
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.parent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* تأثير اللينكات المتطور وسريع الاستجابة */
+.parent li a {
+  color: #ccfbf1;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  padding: 6px 0;
+}
+
+.parent li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #ffffff, #ccfbf1);
+  transition: width 0.15s ease;
+}
+
+.parent li a:hover {
+  color: #ffffff;
+}
+
+.parent li a:hover::after {
+  width: 100%;
+}
+
+/* زر تغيير المود في الوايت */
+.mode {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d9488;
+  background: #ffffff;
+  cursor: pointer;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  padding: 8px 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mode:hover {
+  box-shadow: 
+  0 0 10px #07ffff,
+0 0 400px rgba(0, 0, 0, 0.15),
+  0 0 400px #000000;
+  background-color: #000000;
+  color: hsl(0, 0%, 100%);
+  border: none;
+}
+
+li { list-style-type: none; }
+
+/* الـ H1 الرئيسي */
+h1 {
+  text-align: center;
+  padding: 15px 40px;
+  max-width: 380px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: 0 12px 25px rgba(13, 148, 136, 0.35), 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* تنسيق السكاشن (Section) والشادو البكسل القوي في الوايت */
+section {
+  margin-bottom: 60px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  /* شادو ثقيل وعميق وممتاز هندسياً */
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15), 0 10px 20px rgba(15, 23, 42, 0.05);
+  width: 92%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 28px;
+  padding: 50px 30px;
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 35px 65px rgba(15, 23, 42, 0.22), 0 15px 30px rgba(13, 148, 136, 0.1);
+}
+
+.sec-card {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.left-section,
+.right-section {
+  width: 48%;
+  text-align: center;
+  padding: 20px;
+}
+
+.left-section h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.left-section p {
+  font-size: 19px;
+  margin-bottom: 35px;
+  color: #334155;
+}
+.dark .left-section p{
+    color: #ffffff;
+}
+.dark .left-section h3{
+    color: #00ffff;
+}
+/* أزرار السوشيال ميديا وتدريجات قوية */
+.facebook,
+.GetHup {
+  display: inline-block;
+  color: #ffffff !important;
+  margin: 10px;
+  padding: 12px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.facebook {
+  background: linear-gradient(135deg, #1877f2 0%, #0a53be 100%);
+  box-shadow: 0 10px 20px rgba(24, 119, 242, 0.35);
+}
+.facebook:hover {
+  box-shadow: 0 15px 30px rgba(24, 119, 242, 0.55);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.GetHup {
+  background: linear-gradient(135deg, #000000 0%, #4a4949 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+}
+.GetHup:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.55);
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* الصورة الشخصية */
+.my-img {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 4px solid #0d9488;
+  box-shadow: 0 12px 30px rgba(13, 148, 136, 0.4);
+}
+.my-img:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+article h5 {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: "Sacramento", cursive, sans-serif;
+  margin-top: 15px;
+  color: #0f172a;
+}
+
+.para {
+  font-size: 20px;
+  color: #475569;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* كروت المنتجات (Card) وتنسيق البوتستراب بالكامل */
+.card {
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  background: #ffffff !important;
+}
+
+.card:hover {
+  color: #fff !important;
+  background-color: #000000 !important;
+  transform: translateY(-20px) !important;
+  box-shadow: 1px 15px 25px
+  rgb(16, 4, 85) !important;
+}
+
+.card-img-top {
+  transition: transform 0.4s ease;
+}
+.card:hover .card-img-top {
+  transform: scale(1.06);
+}
+
+
+
+/* التعديل والتنسيق لزرار الشراء وبوتستراب */
+.js-buy, .btn-primary {
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3) !important;
+}
+.js-buy:hover, .btn-primary:hover {
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.5) !important;
+  transform: translateY(-2px);
+}
+
+/* تنسيق الديفات والصناديق (cont & follow) في الوايت */
+.follow {
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  margin: 0 auto 30px;
+  border-top: 6px solid #0d9488;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  width: 90%;
+  max-width: 600px;
+}
+.cont {
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border-top: 8px solid #0d9488;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  margin-top: 50px;
+}
+
+.follow:hover, .cont:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.18);
+}
+
+.follow {
+  font-size: 19px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.follow a {
+  border: 2px solid #0d9488;
+  border-radius: 20px;
+  padding: 6px 20px;
+  text-decoration: none;
+  color: #0d9488;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.follow a:hover {
+  background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.35);
+}
+
+/* صندوق الفيزا والـ Inputs */
+input[type="number"] {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid #cbd5e1;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  text-align: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+input[type="number"]:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 12px rgba(13, 148, 136, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* الأوفرلاي والكونتينر الكبير */
+.bigCont {
+  background-color: rgba(15, 23, 42, 0.45);
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(12px);
+  display: none;
+  z-index: 9999;
+}
+
+/* زر إضافة كارت الجديد */
+.Add, .btn-info {
+  display: block !important;    /* بيخليه ياخد سطر لوحده عشان يقبل التوسيط */
+  margin-left: auto !important;  /* توسيط تلقائي من اليسار */
+  margin-right: auto !important; /* توسيط تلقائي من اليمين */
+  margin-top: 30px !important;   /* مسافة من فوق */
+  margin-bottom: 35px !important;/* مسافة من تحت */
+  
+  /* الشادو القوي والتنسيق اللى يتماشى مع التعديل الأخير */
+  padding: 14px 35px;
+  font-weight: 700;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 12px 25px rgba(6, 182, 212, 0.4) !important;
+}
+
+.Add:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(6, 182, 212, 0.6) !important;
+}
+/* الفوتر وتنسيقه */
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.design {
+  background: linear-gradient(135deg, #076e62 0%, #0d9488 100%);
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -10px 35px rgba(13, 148, 136, 0.2);
+  margin-bottom: 0px !important;
+}
+
+/* ================= MEDIA QUERIES (التجاوب الكامل مع الشاشات) ================= */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column-reverse;
+  }
+  .left-section, .right-section {
+    width: 100%;
+    padding: 10px;
+  }
+  .parent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  h1 {
+    width: 85%;
+    font-size: 24px;
+  }
+  section {
+    padding: 35px 15px;
+  }
+}

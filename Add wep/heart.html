@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heart Particles</title>
+<style>
+    body {
+        margin: 0;
+        background: black;
+        overflow: hidden;
+    }
+
+    canvas {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+let hue = 0;
+
+// معادلة شكل القلب
+function heartFunction(t) {
+    const x = 16 * Math.pow(Math.sin(t), 3);
+    const y = 13 * Math.cos(t)
+        - 5 * Math.cos(2 * t)
+        - 2 * Math.cos(3 * t)
+        - Math.cos(4 * t);
+
+    return {
+        x: canvas.width / 2 + x * 20,
+        y: canvas.height / 2 - y * 20
+    };
+}
+
+// إنشاء الجزيئات
+for (let i = 0; i < 1000; i++) {
+    const t = Math.random() * Math.PI * 2;
+    const pos = heartFunction(t);
+
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        targetX: pos.x,
+        targetY: pos.y,
+        size: Math.random() * 2 + 1
+    });
+}
+
+function animate() {
+    ctx.fillStyle = "rgba(0,0,0,0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    hue += 1;
+
+    particles.forEach(p => {
+        // تحريك تدريجي ناحية الهدف
+        p.x += (p.targetX - p.x) * 0.02;
+        p.y += (p.targetY - p.y) * 0.02;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `hsl(${hue}, 100%, 60%)`;
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+.fa {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+.fa-face-angry {
+  background-image: url('../svgs/face-angry.svg');
+  
+}
+
+.fa-star {
+  background-image: url('../svgs/star.svg');
+}
+
+.fa-trash {
+  background-image: url('../svgs/trash.svg');
+}
+
+.fa-download {
+ font-size: 10px;
+}
+
+.fa-heart {
+  background-image: url('../svgs/heart.svg');
+}
